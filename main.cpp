@@ -37,7 +37,6 @@ void Comunica()
 
                 client_socket >> resposta;
 
-                //stringstream ss;
                 ss << resposta;
                 ss >> x;
                 w->setFluxo(x);
