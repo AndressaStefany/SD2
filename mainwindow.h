@@ -14,8 +14,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void paintEvent(QPaintEvent*p);
+    void timerEvent(QTimerEvent*e);
     ~MainWindow();
-    void setTemp(double x) { temp= x; repaint(); }
+    void setTemp(double x) { temp= x; }
 private:
     Ui::MainWindow *ui;
     double temp;

@@ -17,15 +17,15 @@ void Comunica()
 {
     try
     {
-
-        ClientSocket client_socket ( "192.168.0.6", 30000 );
+        // andressa 192.168.0.6
+        ClientSocket client_socket ( "192.168.0.53", 30000 );
 
         string resposta;
 
         try
         {
             while(!fim){
-                client_socket << "temperatura";
+                client_socket << "sensores";
                 client_socket >> resposta;
                 double x;
                 stringstream ss;

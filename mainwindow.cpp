@@ -10,11 +10,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    startTimer(500);
+}
+
+
+void MainWindow::timerEvent(QTimerEvent *e)
+{
+    ui->lcdNumber->display(temp);
+    cout << "AAA";
 }
 
 void MainWindow::paintEvent(QPaintEvent *p)
 {
-    ui->lcdNumber->display(temp);
+
 }
 
 
