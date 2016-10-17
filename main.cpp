@@ -17,8 +17,8 @@ void Comunica()
 {
     try
     {
-        // andressa 192.168.0.6
         ClientSocket client_socket ( "192.168.0.53", 30000 );
+	//ClientSocket client_socket ( "192.168.0.6", 30000 );
 
         string resposta;
 
