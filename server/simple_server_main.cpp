@@ -6,8 +6,8 @@
 
 using namespace std;
 
-float temperatura = 33.4;
-float fluxo = 10.40;
+float temperatura = 0;
+float fluxo = 20;
 
 int main ( int argc, char* argv[] )
 {
@@ -37,12 +37,16 @@ int main ( int argc, char* argv[] )
 						cout<<fluxo<<endl;
 
 						stringstream conversaoTemp;
-						conversaoTemp<<temperatura;
-						conversaoTemp>>resposta;
 
-						stringstream conversaoFluxo;
-						conversaoFluxo<<fluxo;
-						conversaoFluxo>>resposta;
+						temperatura+=1;
+						if(temperatura>500)
+							temperatura= 0;
+						fluxo-=1;
+						if(fluxo<0)
+							fluxo=20;
+						conversaoTemp << temperatura << " " << fluxo;
+						resposta= conversaoTemp.str();
+						cout << resposta << endl;
 					}
 
 					else if(pedido == "mudar"){
@@ -50,7 +54,8 @@ int main ( int argc, char* argv[] )
 					}
 
 					else
-						new_sock << "ERRO";
+						resposta= "Erro";
+					new_sock << resposta;
 				}
 			}
 			catch ( SocketException& ) {}
