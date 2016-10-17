@@ -16,8 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::timerEvent(QTimerEvent *e)
 {
-    ui->lcdNumber->display(temp);
-    cout << "AAA";
+    ui->lcdNumber->display(temp); //temperatura
+    ui->lcdNumber_2->display(fluxo); //fluxo
 }
 
 void MainWindow::paintEvent(QPaintEvent *p)

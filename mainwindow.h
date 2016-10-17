@@ -17,9 +17,12 @@ public:
     void timerEvent(QTimerEvent*e);
     ~MainWindow();
     void setTemp(double x) { temp= x; }
+    void setFluxo(double x) { fluxo= x;}
+
 private:
     Ui::MainWindow *ui;
     double temp;
+    double fluxo;
 };
 
 #endif // MAINWINDOW_H

@@ -27,11 +27,17 @@ void Comunica()
             while(!fim){
                 client_socket << "sensores";
                 client_socket >> resposta;
+
                 double x;
                 stringstream ss;
                 ss << resposta;
                 ss >> x;
                 w->setTemp(x);
+
+                ss << resposta;
+                ss >> x;
+                w->setFluxo(x);
+                sleep(1);
             }
         }
         catch ( SocketException& ) {}
