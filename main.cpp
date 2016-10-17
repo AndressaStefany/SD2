@@ -25,13 +25,23 @@ void Comunica()
         try
         {
             while(!fim){
-                client_socket << "temperatura";
+                client_socket << "sensores";
                 client_socket >> resposta;
+
                 double x;
+
                 stringstream ss;
                 ss << resposta;
                 ss >> x;
                 w->setTemp(x);
+
+                client_socket >> resposta;
+
+                //stringstream ss;
+                ss << resposta;
+                ss >> x;
+                w->setFluxo(x);
+
             }
         }
         catch ( SocketException& ) {}
