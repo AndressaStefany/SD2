@@ -28,15 +28,13 @@ void Comunica()
                 client_socket << "sensores";
                 client_socket >> resposta;
 
-                double x;
+                double x, y;
+                string a;
                 stringstream ss;
                 ss << resposta;
-                ss >> x;
+                ss >> x >> y;
                 w->setTemp(x);
-
-                ss << resposta;
-                ss >> x;
-                w->setFluxo(x);
+                w->setFluxo(y);
                 sleep(1);
             }
         }
