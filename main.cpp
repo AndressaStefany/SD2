@@ -15,34 +15,32 @@ bool fim= false;
 
 void Comunica()
 {
-    try
-    {
-        // andressa 192.168.0.6
-        ClientSocket client_socket ( "192.168.0.53", 30000 );
-
-        string resposta;
-
+    while(!fim){
         try
         {
-            while(!fim){
+            // andressa 192.168.0.6
+            ClientSocket client_socket ( "192.168.0.53", 5000 );
+            string resposta;
+            try
+            {
                 client_socket << "sensores";
                 client_socket >> resposta;
 
-                double x, y;
-                string a;
+                double temperatura, fluxo, tempo;
                 stringstream ss;
                 ss << resposta;
-                ss >> x >> y;
-                w->setTemp(x);
-                w->setFluxo(y);
+                ss >> temperatura >> fluxo >> tempo;
+                w->setTemp(temperatura);
+                w->setFluxo(fluxo);
+                w->setTempo(tempo);
                 sleep(1);
             }
+            catch ( SocketException& ) {}
         }
-        catch ( SocketException& ) {}
-    }
-    catch ( SocketException& e )
-    {
-        cout << "Exception was caught:" << e.description() << "\n";
+        catch ( SocketException& e )
+        {
+            cout << "Exception was caught:" << e.description() << "\n";
+        }
     }
 }
 

@@ -23,3 +23,10 @@ HEADERS  += mainwindow.h \
     SocketException.h
 
 FORMS    += mainwindow.ui
+
+CONFIG += c++11
+
+DISTFILES +=
+
+RESOURCES += \
+    imagens.qrc

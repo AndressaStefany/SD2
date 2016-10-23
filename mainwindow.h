@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPainter>
 
 namespace Ui {
 class MainWindow;
@@ -18,11 +19,11 @@ public:
     ~MainWindow();
     void setTemp(double x) { temp= x; }
     void setFluxo(double x) { fluxo= x;}
+    void setTempo(double x) { tempo= x; }
 
 private:
     Ui::MainWindow *ui;
-    double temp;
-    double fluxo;
+    double temp, fluxo, tempo, min,seg;
 };
 
 #endif // MAINWINDOW_H
