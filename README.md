@@ -1,5 +1,5 @@
 # SD2
-Segundo projeto da disciplina Sistemas Digitais
+Segundo projeto da disciplina Sistemas Digitais - UFRN
 
 ## Compilação
 1. Primeiramente, deve-se compilar o servidor:
