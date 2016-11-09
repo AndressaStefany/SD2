@@ -1,7 +1,7 @@
 # SD2
 Segundo projeto da disciplina Sistemas Digitais
 
-# Compilação
+## Compilação
 1. Primeiramente, deve-se compilar o servidor:
 	- make
 	- ./simple_server_main
